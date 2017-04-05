@@ -1,6 +1,4 @@
-/**
- * Created by MacBook Air on 2017/3/16.
- */
+
 myapp.controller("doctor",function($scope){
     var userId = window.sessionStorage.getItem("userId");
     var isDeleteEvent = false;
@@ -8,7 +6,7 @@ myapp.controller("doctor",function($scope){
     var param = {};
     window.calendarData = [];
     if(!userId){
-        sureText("用户未登录，请重新登录",function(){
+        sureText("Login first!",function(){
             location.href = "/login";
         });
     }
@@ -16,30 +14,32 @@ myapp.controller("doctor",function($scope){
 
     $(".calendar-btn").click(function(){
         if(!$(this).attr("name")){
-
-            setTimeout(function() {
+            setTimeout(function(){
                 $("#myCalendar").fullCalendar({
                     header:{
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay,listWeek'
+                        left:"",
+                        center:"",
+                        right:""
                     },
+                    aspectRatio:"1.5",
                     slotMinutes:60,
                     defaultView:"agendaWeek",
                     columnFormat:"ddd",
                     allDaySlot:false,
+                    minTime:8,
+                    maxTime:20,
                     events:{
                         url:"/doctor/appointment/detail?userId="+userId,
                         type:"GET"
                     },
-                    click:function(data,bool,jsEvent,view){
+                    dayClick:function(data,bool,jsEvent,view){
                         if(isDeleteEvent){
                             return false;
                         }
                         var time = new Date(data).getTime();
                         var endTime = new Date(time + 60 * 60 * 1000);
-                        var selDate =$.fullCalendar.formatDate(data,'yyyy－MM-dd HH:mm');//格式化日期
-                        var end =$.fullCalendar.formatDate(endTime,'yyyy－MM-dd HH:mm');//格式化日期
+                        var selDate =$.fullCalendar.formatDate(data,'yyyy-MM-dd HH:mm');//格式化日期
+                        var end =$.fullCalendar.formatDate(endTime,'yyyy-MM-dd HH:mm');//格式化日期
                         var eventParam = {
                             userId:userId,
                             event:{
@@ -47,7 +47,7 @@ myapp.controller("doctor",function($scope){
                                 start:selDate,
                                 end:end,
                                 title:"Available",
-                                color:"rgb(174, 222, 214)"
+                                color:"rgb(0, 222, 0)"
                             }
                         };
                         $.ajax({
@@ -67,7 +67,7 @@ myapp.controller("doctor",function($scope){
                     },
                     eventClick:function(calEvent){
                         isDeleteEvent = true;
-                        var selDate =$.fullCalendar.formatDate(calEvent.start,'yyyy－MM-dd HH:mm');//格式化日期
+                        var selDate =$.fullCalendar.formatDate(calEvent.start,'yyyy-MM-dd HH:mm');//格式化日期
                         var resetParam = {
                             userId:userId,
                             date:selDate

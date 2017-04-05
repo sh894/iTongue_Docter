@@ -62,7 +62,7 @@ app.post("/doctor/register",function(req,res){
             console.log(err);
         }
         if(doctors.length > 0){
-            res.send(returnObj(1,req.body.username + "用户名已存在"));
+            res.send(returnObj(1,req.body.username + "Username already used"));
         }else{
             // 注册用户
             var doctor = new Doctor({
@@ -73,7 +73,7 @@ app.post("/doctor/register",function(req,res){
                 if(err){
                     console.log(err);
                 }else{
-                    res.send(returnObj(0,"注册成功",doc));
+                    res.send(returnObj(0,"Register success",doc));
                 }
             });
         }
@@ -87,16 +87,16 @@ app.post("/doctor/login",function(req,res){
             console.log(err);
         }
         if(doctors.length == 0){
-            res.send(returnObj(1,req.body.username+"用户名不存在"));
+            res.send(returnObj(1,req.body.username+"User doesn't exist"));
         }else{
             Doctor.find({username:req.body.username,password:req.body.password},function(err,doc){
                 if(err){
                     console.log(err);
                 }
                 if(doc.length == 0){
-                    res.send(returnObj(1,"密码错误"));
+                    res.send(returnObj(1,"Password error"));
                 }else{
-                    res.send(returnObj(0,"登录成功",doc[0]));
+                    res.send(returnObj(0,"Login success",doc[0]));
                 }
             });
         }
@@ -119,7 +119,7 @@ app.post("/image/upload",function(req,res){
                 if(err){
                     console.log(err);
                 }else{
-                    res.send(returnObj(0,"上传图片成功",dstPath));
+                    res.send(returnObj(0,"Image upload success",dstPath));
                 }
             })
         }
@@ -147,9 +147,9 @@ app.post("/doctor/perfect",function(req,res){
             console.log(err);
         }else{
             if(doctors.nModified > 0){
-                res.send(returnObj(0,"更新成功"));
+                res.send(returnObj(0,"Update success"));
             }else{
-                res.send(returnObj(1,"更新失败"));
+                res.send(returnObj(1,"Update fail"));
             }
         }
     });
@@ -161,7 +161,7 @@ app.get("/doctor/all",function(req,res){
         if(err){
             console.log(err);
         }else{
-            res.send(returnObj(0,"查询成功",doctors));
+            res.send(returnObj(0,"Success",doctors));
         }
     });
 });
@@ -173,7 +173,7 @@ app.get("/doctor/detail",function(req,res){
         if(err){
             console.log(err);
         }else{
-            res.send(returnObj(0,"查询成功",doctor));
+            res.send(returnObj(0,"Success",doctor));
         }
     });
 });
@@ -201,7 +201,7 @@ app.post("/doctor/appointment",function(req,res){
                 if(err){
                     console.log(err);
                 }else{
-                    res.send(returnObj(0,"修改成功",doctors));
+                    res.send(returnObj(0,"Update success",doctors));
                 }
             });
         }
@@ -239,7 +239,7 @@ app.post("/doctor/appointment/reset",function(req,res){
                 if(err){
                     console.log(err);
                 }else{
-                    res.send(returnObj(0,"删除成功"));
+                    res.send(returnObj(0,"Delete success"));
                 }
             });
         }

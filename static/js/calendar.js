@@ -1,19 +1,16 @@
-/**
- * Created by MacBook Air on 2017/3/13.
- */
-// 声明一个日历
+
 $.prototype.calendar = function(num){
     var str = '<table class="table table-bordered calendar-style">' +
         '<thead>' +
         '<tr>' +
         '<th></th>' +
-        '<th>一</th>' +
-        '<th>二</th>' +
-        '<th>三</th>' +
-        '<th>四</th>' +
-        '<th>五</th>' +
-        '<th>六</th>' +
-        '<th>日</th>' +
+        '<th>Monday</th>' +
+        '<th>Tuesday</th>' +
+        '<th>Wednesday</th>' +
+        '<th>Thursday</th>' +
+        '<th>Friday</th>' +
+        '<th>Saturday</th>' +
+        '<th>Sunday</th>' +
         '</tr>' +
         '</thead>' +
         '<tbody>' +
