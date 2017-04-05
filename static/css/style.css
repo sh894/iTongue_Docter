@@ -1,0 +1,930 @@
+@font-face {
+    font-family: 'SansitaOne';
+    src:url(../fonts/SansitaOne.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src:url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+input[type="button"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding:0 0;
+	margin:0 0;
+}
+p{
+	padding:0 0;
+	margin:0 0;
+}
+ul{
+	padding:0 0;
+	margin:0 0;	
+}
+body{
+	padding:0 0;
+	margin:0 0; 
+	font-family: 'OpenSans-Regular';
+}
+.header{
+	background:#fff url('../images/light_bg.png');
+	background-size: 100% 100%;
+	min-height: 729px;
+}
+.header-top {
+	padding: 11px 0 0 0;
+}
+.logo{
+	float: left;
+}
+.logo a {
+	font-size: 4em;
+	text-transform: capitalize;
+	color: #fff;
+	font-family: 'SansitaOne';
+	text-decoration: none;
+}
+.top-menu{
+	float: right;
+	margin-top: 2.5em;
+}
+.top-menu ul li{
+	display: inline-block;
+	margin: 0 0.5em;
+}
+.top-menu ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.1em;
+	text-transform: capitalize;
+}
+.top-menu ul li a.active {
+    color: #05ceaa;
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+span.menu {
+  display: none;
+}
+/* Effect 16: fall down */
+.cl-effect-16 a {
+	color: #6f8686;
+	text-shadow: 0 0 1px rgba(111,134,134,0.3);
+}
+
+.cl-effect-16 a::before {
+	color: #05ceaa;
+	content: attr(data-hover);
+	position: absolute;
+	opacity: 0;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	-webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.cl-effect-16 a:hover::before,
+.cl-effect-16 a:focus::before {
+	-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	opacity: 1;
+}
+nav a {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+.about-section {
+    text-align: center;
+    padding: 4em 0;
+    background: url("../images/bg-3.png") repeat;
+}
+.about-header h3 {
+	font-size: 3em;
+	text-transform: capitalize;
+	color: #05ceaa;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+}
+.about-header p {
+    font-size: 1.2em;
+    color: #797272;
+    line-height: 1.8em;
+    width: 58%;
+    margin: 0 auto 2em;
+ }
+ .about-header {
+    margin-bottom: 3em;
+}
+.bout-grid h4 {
+    font-size: 1.5em;
+    color: #000;
+    font-weight: 600;
+}
+span.glyphicon.glyphicon-plus-sign {
+    font-size: 2.5em;
+	color: rgb(44, 73, 119);
+    border-radius: 60px;
+    border: 2px solid;
+    padding: 1em;
+}
+span.glyphicon.glyphicon-check {
+    font-size: 2.5em;
+	color: rgb(44, 73, 119);
+    border-radius: 60px;
+    border: 2px solid;
+    padding: 1em;
+}
+span.glyphicon.glyphicon-user {
+    font-size: 2.5em;
+	color: rgb(44, 73, 119);
+    border-radius: 60px;
+    border: 2px solid;
+    padding: 1em;
+}
+.about-grid h4 {
+    font-size: 1.5em;
+    color: #05ceaa;
+    margin: 0.5em 0;
+    text-transform: capitalize;
+    font-family: 'SansitaOne';
+}
+.about-grid p {
+    font-size: 1em;
+    color: #747474;
+    line-height: 1.8em;
+}
+.services-section{
+	padding: 4em 0;
+	background: #eee;
+	text-align: center;
+}
+.services-section h3 {
+    font-size: 3em;
+	text-transform: capitalize;
+	color: #05ceaa;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+}
+.services-grid h4 {
+  	font-size: 1.5em;
+    color: rgb(44, 73, 119);
+    margin: 0.5em 0;
+    text-transform: capitalize;
+    font-family: 'SansitaOne';
+}
+.services-grid p {
+    font-size: 1em;
+    color: #747474;
+    line-height: 1.8em;
+}
+.services-grids {
+    margin-top: 3em;
+}
+/*gallery*/
+.gallery-section{
+    text-align: center;
+    padding: 4em 0;
+    background: #1e1e1e;
+
+}
+.gallery-text h3 {
+	font-size: 3em;
+	text-transform: capitalize;
+	color: #fff;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+}
+.gallery-grids {
+    margin-top: 3em;
+}
+.gallery-grid{
+	position:relative;
+	padding:0 0.5em 1em;
+}
+.rotate:hover  i{
+	transform: rotateY(360deg);
+	-webkit-transform: rotateY(360deg);
+	-moz-transform: rotateY(360deg);
+	-o-transform: rotateY(360deg);
+	-webkit-transition: 0.8s;
+	-moz-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+}
+.rotate i{
+    background: url(../images/se.png) no-repeat 0px;
+    width: 51px;
+    height: 51px;
+    display: block;
+    margin: 8em 0 0 11em;
+}
+.rotate{
+    position: absolute;
+    top: 0;
+    background:rgba(5, 206, 170, 0.28);
+    width: 96.5%;
+    height: 95.5%;
+    display: none;
+    text-align: center;
+}
+.gallery-grid:hover .rotate{
+	display:block;
+}
+/*--/gallery-page--*/
+/*----//End-pricetables----*/
+.dentists-section {
+	padding:4em 0;
+	background: #eee;
+	text-align: center;
+}
+.dentists-section h3 {
+     font-size: 3em;
+	 text-transform: capitalize;
+	 color: #05ceaa;
+	 font-family: 'SansitaOne';
+	 margin-bottom: 0.5em;
+}
+
+.item-grid h4 {
+    color: #05ceaa;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    font-family: 'SansitaOne';
+}
+.item-grid p {
+    color: #747474;
+    font-size: 1em;
+    line-height: 1.8em;
+}
+
+.blog-section {
+    padding: 4em 0;
+    text-align:center;
+}
+.blog-section h3 {
+	font-size: 3em;
+	text-transform: capitalize;
+	color: #05ceaa;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+ }
+
+.blog-grid p {
+    font-size: 1em;
+    color: #747474;
+    line-height: 1.8em;
+    margin: 1em 0 0;
+
+}
+.blog-grid h4 a {
+    text-decoration: none;
+    color:rgb(44, 73, 119);
+}
+.blog-grid h4 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    font-weight: 600;
+      font-family: 'SansitaOne';
+}
+p.date {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 1em;
+    text-transform: capitalize;
+}
+.blog-grid p a {
+    color: #05ceaa;
+}
+.blog-grids{
+    margin-top: 3em;
+}
+.blog1 {
+  margin-top: 3em;
+}
+.blog-grid1 h5 {
+    font-size: 1.5em;
+    color: #000;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+.blog-grid1 p {
+    font-size: 1em;
+    color: #747474;
+    line-height: 2em;
+}
+.times-section {
+    text-align: center;
+    background: url("../images/banner2.jpg") no-repeat;
+	background-size: cover;
+	min-height: 517px;
+    padding: 6em 0 0 0;
+  
+}
+.times-section h3 {
+    font-size: 3em;
+	text-transform: capitalize;
+	color: #fff;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+}
+.times-section h4 {
+    font-size: 3em;
+    text-transform: capitalize;
+    color: #05ceaa;
+    font-weight: 600;
+    line-height: 1.5em;
+
+}
+.times-section h5 {
+    font-size: 3em;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 1em;
+ }
+.times-section p {
+    font-size: 1.2em;
+    color: #000;
+    line-height: 1.8em;
+}
+/*** contact***/
+.contact-section {
+    padding: 4em 0 0;
+    background: #ededed;
+    position: relative;
+}
+.contact-text{
+	text-align:center;
+}
+.contact-section h3 {
+	font-size: 3em;
+	text-transform: capitalize;
+	color: #05ceaa;
+	font-family: 'SansitaOne';
+	margin-bottom: 0.5em;
+}
+span.glyphicon.glyphicon-phone {
+  font-size: 3em;
+  color: rgb(44, 73, 119);
+  margin-bottom: 0.5em;
+}
+span.glyphicon.glyphicon-map-marker {
+  font-size: 3em;
+  color: rgb(44, 73, 119);
+  margin-bottom: 0.5em;
+}
+span.glyphicon.glyphicon-envelope {
+  font-size: 3em;
+  color: rgb(44, 73, 119);
+  margin-bottom: 0.5em;
+}
+.contact-grids{
+	margin:5% 0 25% 0;
+}
+.contact-grid p{
+  color: #747474;
+  font-size: 1em;
+  line-height: 1.8em;
+}
+.contact-grid a{
+	color:#747474;
+    display:block;
+	text-decoration:none;
+	font-size:1em;
+}
+.contact-grid a:hover{
+	color:#05ceaa;
+}
+.contact-details{
+	background:#555;
+	padding:4em;
+	width: 49%;
+	position: absolute;
+	bottom: 32%;
+	left: 26%;
+}
+.contact-details form input[type="text"],.contact-details form textarea {
+	width: 100%;
+	padding: 10px 14px;
+	border: 1px solid #fff;
+	font-size: 1em;
+	margin-bottom: 1.2em;
+	color: #fff;
+	outline: none;
+	background:transparent;
+}
+.contact-details form textarea {
+	height: 160px;
+	resize: none;
+	width: 100%;
+}
+.contact-right{
+	text-align:right;
+}
+.contact-details input[type="submit"] {
+	background: #05ceaa;
+	padding: 1em 2em;
+	border: none;
+	font-size: 1em;
+	margin: 0.5em 0 0 0;
+	color: #fff;
+	outline: none;
+	font-weight: 600;
+	border-radius:5px;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.contact-details input[type="submit"]:hover {
+  	color: #000;
+  	background: #fff;
+}
+.map iframe{
+	height:500px;
+	width:100%;
+}
+.footer-section {
+    padding: 2em 0;
+    text-align: center;
+    background: #deecdf;
+}
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #1B1B1B;
+    font-weight: 400;
+}
+.footer-bottom a {
+    margin: 0 6px 0 6px;
+}
+.footer-bottom a {
+    font-size: 1em;
+    color: #1B1B1B;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+#toTop {
+	display: none;
+	text-decoration: none;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	overflow: hidden;
+	width: 48px;
+	height: 48px;
+	border: none;
+	text-indent: 100%;
+	background: url("../images/to-top2.png") no-repeat 0px 0px;
+}
+	
+				/*-- responsive-mediaquries --*/
+
+@media(max-width:1440px){
+.header {
+    min-height: 750px;
+}
+}
+@media (max-width: 1366px){
+.header {
+  min-height: 764px;
+}
+}
+@media (max-width: 1280px){
+.header {
+  min-height: 784px;
+}
+}
+@media (max-width: 1080px){
+.header {
+  min-height: 673px;
+}
+.about-header h3,.services-section h3,.gallery-text h3 ,.dentists-section h3,.blog-section h3,.times-section h3,.contact-section h3{
+  font-size: 2.5em;
+}
+.about-grid h4,.services-grid h4,.item-grid h4,.blog-grid h4{
+  font-size:1.4em;
+}
+.about-grid p,.services-grid p,.item-grid p,.blog-grid p {
+  font-size: 0.965em;
+}
+.times-section h4 {
+  font-size: 2em;
+}
+.rotate {
+  width: 96%;
+  height: 94%;
+}
+.rotate i {
+  margin: 6em 0 0 9em;
+}
+.times-section h5 {
+  font-size: 2em;
+}
+.times-section {
+    min-height: 384px;
+}
+.contact-details {
+  padding: 4em 3em;
+  width: 60%;
+  position: absolute;
+  bottom: 27%;
+  left: 20%;
+}
+.map iframe {
+  height: 400px;
+}
+}
+@media (max-width: 991px){
+span.menu{
+	display: block;
+	text-align: left;
+	cursor: pointer;
+	position: relative;
+}
+.top-menu ul{
+	display: none;
+	position:absolute;
+	width: 100%;
+	z-index: 9999;
+	left: 0%;
+	margin:1.2em 0em;
+	background:rgba(234, 236, 240, 0.83);
+	border:0;
+}
+.top-menu span.menu{
+	display: block;
+}
+.top-menu ul li{
+	display: block;
+	float:none;
+	text-align: center;
+}
+.top-menu ul li a{
+	color:#000;
+	display:inline-block;
+	margin:0;
+	background:none;
+	border:none;
+	padding:0.4em;
+	font-size:1em;
+}
+.logo a {
+  font-size: 3.5em
+}
+.top-menu {
+  margin-top: 1.5em;
+}
+.header {
+  min-height: 540px;
+}
+.about-section,.services-section,.gallery-section,.dentists-section,.blog-section { 
+  padding: 3em 0;
+}
+.about-header h3, .services-section h3, .gallery-text h3, .dentists-section h3,.blog-section h3, .times-section h3, .contact-section h3 {
+  font-size: 2em;
+}
+.about-grid {
+  float: left;
+  width: 33.3%;
+}
+.about-grid h4, .services-grid h4, .item-grid h4, .blog-grid h4 {
+  font-size: 1.3em;
+}
+.about-grid p, .services-grid p, .item-grid p, .blog-grid p {
+  font-size: 0.95em;
+}
+.services-grid {
+  float: left;
+  width: 25%;
+}
+.gallery-grid {
+  float: left;
+  width: 33.3%;
+}
+.rotate {
+   width: 94%;
+  height: 93%;
+}
+.rotate i {
+   margin: 4em 0 0 7em;
+}
+.blog-leftgtid {
+  float: left;
+  width: 50%;
+}
+.blog-rightgtid {
+  float: left;
+  width: 50%;
+}
+.times-section {
+  min-height: 287px;
+  padding: 4em 0 0 0;
+}
+.times-section h4 {
+  font-size: 1.5em;
+}
+.times-section h5 {
+  font-size: 1.5em;
+}
+.contact-grid{
+  float: left;
+  width: 33.3%;
+}
+.contact-left {
+  float: left;
+  width: 50%;
+}
+.contact-right {
+  float: left;
+  width: 50%;
+}
+.contact-details {
+  padding: 2em 0em;
+  width: 60%;
+  position: absolute;
+  bottom: 19%;
+  left: 20%;
+}
+.contact-details input[type="submit"] {
+   font-size: 0.96em;
+     padding: 1em 1.2em;
+}
+.contact-section{
+padding:3em 0 0;
+}
+.map iframe {
+  height: 270px;
+}
+}
+@media (max-width: 640px){
+.logo a {
+  font-size: 3em;
+}
+.top-menu {
+  margin-top: 1.3em;
+}
+.top-menu ul {
+  margin: 0.7em 0em;
+}
+.header {
+  min-height: 443px;
+}
+.about-header h3, .services-section h3, .gallery-text h3, .dentists-section h3, .blog-section h3, .times-section h3, .contact-section h3 {
+  font-size: 1.6em;
+}
+.about-grid h4, .services-grid h4, .item-grid h4, .blog-grid h4 {
+  font-size: 1.2em;
+    margin: 0.8em 0 0.5em;
+}
+.about-header {
+  margin-bottom: 2em;
+}
+.services-grids {
+  margin-top: 2em;
+}
+.services-grid {
+  float: left;
+  width: 50%;
+}
+.services-grid:nth-child(3) {
+  margin-top: 2em;
+}
+.services-grid:nth-child(4) {
+  margin-top: 2em;
+}
+.gallery-grids {
+  margin-top: 2em;
+}
+.rotate i {
+  margin: 3em 0 0 5em;
+}
+.rotate {
+  width: 93%;
+  height: 91%;
+}
+.blog-grids {
+  margin-top: 2em;
+}
+.times-section {
+  min-height: 236px;
+  padding: 3em 0 0 0;
+}
+.times-section h4 {
+  font-size: 1.3em;
+}
+.times-section h5 {
+  font-size: 1.3em;
+}
+.contact-details form input[type="text"], .contact-details form textarea {
+    font-size: 0.95em;
+}
+.contact-details form textarea {
+  height: 150px;
+}
+}
+@media (max-width: 480px){
+.logo a {
+  font-size: 2.5em;
+}
+.top-menu {
+  margin-top: 0.8em;
+}
+.top-menu ul {
+   margin: 0.5em 0em;
+}
+.header {
+  min-height: 334px;
+}
+.about-header h3, .services-section h3, .gallery-text h3, .dentists-section h3, .blog-section h3, .times-section h3, .contact-section h3 {
+  font-size: 1.5em;
+}
+.about-section, .services-section, .gallery-section, .dentists-section, .blog-section {
+  padding: 2em 0;
+}
+.about-grid p, .services-grid p, .item-grid p, .blog-grid p {
+  font-size: 0.92em;
+}
+span.glyphicon.glyphicon-plus-sign {
+  font-size: 2em;
+}
+span.glyphicon.glyphicon-check{
+  font-size: 2em;
+}
+span.glyphicon.glyphicon-user {
+  font-size: 2em;
+}
+.about-grid {
+    width: 100%;
+	padding:0;
+}
+.about-grid:nth-child(2) {
+  margin:1em 0;
+ }
+.rotate i {
+  margin: 2em 0 0 3.7em;
+}
+.rotate {
+  width: 91%;
+  height: 89%;
+}
+.times-section {
+  min-height: 199px;
+  padding: 2em 0 0 0;
+}
+.times-section h4 {
+  font-size: 1.2em;
+}
+.times-section h5 {
+  font-size: 1.2em;
+}
+.contact-details {
+  width: 79%;
+  left: 10%;
+  padding: 1.5em;
+  bottom: 10%;
+}
+.contact-grid {
+  width: 100%;
+}
+.map iframe {
+  height: 340px;
+}
+.contact-details form input[type="text"], .contact-details form textarea {
+  font-size: 0.9em;
+}
+.contact-left {
+  width: 100%;
+}
+.contact-right {
+  width: 100%;
+}
+.contact-grids {
+  margin: 5% 0 49% 0;
+}
+.contact-details input[type="submit"] {
+  font-size: 0.9em;
+  padding: 1em 1em;
+}
+.contact-grid:nth-child(2) {
+  margin-top: 1em;
+}
+}
+@media (max-width: 320px){
+.header {
+  min-height: 312px;
+}
+.about-header h3, .services-section h3, .gallery-text h3, .dentists-section h3, .blog-section h3, .times-section h3, .contact-section h3 {
+  font-size: 1.6em;
+}
+.about-grid h4, .services-grid h4, .item-grid h4, .blog-grid h4 {
+  font-size: 1.3em;
+}
+.about-section, .services-section, .gallery-section, .dentists-section, .blog-section {
+  padding: 1em 0;
+}
+.services-grid {
+  width: 100%;
+  padding: 0;
+}
+.services-grid:nth-child(2) {
+  margin-top: 1em;
+}
+.services-grid:nth-child(3) {
+  margin-top: 1em;
+}
+.services-grid:nth-child(4) {
+  margin-top: 1em;
+}
+.gallery-grid {
+  width: 100%;
+  padding:0;
+  margin-top:1em; 
+ }
+.gallery-grids {
+  margin-top: 0em;
+}
+.rotate {
+  width: 100%;
+  height: 100%;
+}
+.rotate i {
+  margin: 5em 0 0 8em;
+}
+.blog-leftgtid {
+  width: 100%;
+  padding: 0;
+   margin-top:1em;
+}
+.blog-rightgtid {
+  width: 100%;
+  padding: 0;
+  margin-top:1em;
+}
+.contact-left {
+    padding: 0;
+}
+.contact-right {
+  padding: 0;
+}
+.blog-grids {
+  margin-top: 0em;
+}
+.blog1 {
+  margin-top: 1em;
+}
+.contact-section {
+  padding: 1em 0 0;
+}
+.contact-details {
+  width: 85%;
+  left: 7%;
+  padding: 1.5em;
+  bottom: 6%;
+}
+.contact-details input[type="submit"] {
+  font-size: 0.85em;
+  padding: 0.5em 1em;
+}
+.footer-section {
+  padding: 1em 0;
+}
+}

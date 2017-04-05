@@ -1,0 +1,61 @@
+﻿<%- include('partials/header') %>
+<div class="form-container" ng-app="myapp" ng-controller="login">
+    <h2>Login</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control input-uername" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control input-password" />
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary submit-btn">Login</button>
+            <a href="/register" class="btn btn-link">Register</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/hint.js"></script>
+<script type="text/javascript">
+    var myapp = angular.module('myapp',[]);
+    myapp.controller("login",function($scope){
+        $(".submit-btn").click(function(){
+            console.log("a");
+            if(!$(".input-uername").val() || !$(".input-password").val()){
+                hintText("输入框不能为空");
+                return false;
+            }
+            var param = {
+                username:$(".input-uername").val(),
+                password:$(".input-password").val()
+            };
+            $.ajax({
+                url:"/doctor/login",
+                dataType:"json",
+                data:JSON.stringify(param),
+                contentType:"application/json",
+                type:"POST",
+                success:function(data){
+                    if(data.status == 0){
+                        window.sessionStorage.setItem("userId",data.body._id);
+                        location.href = "main.html";
+                    }else{
+                        hintText(data.msg);
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script type="text/javascript" src="js/controller.js"></script>
+<%- include('partials/footer') %>

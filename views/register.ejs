@@ -1,0 +1,64 @@
+﻿<%- include('partials/header') %>
+<div class="form-container" ng-app="myapp" ng-controller="register">
+    <h2>Register</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control input-uername" value="<%= locals.username || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control input-password" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control input-password-again" required />
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary submit-btn">Register</button>
+            <a href="/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/hint.js"></script>
+<script type="text/javascript">
+    var myapp = angular.module('myapp',[]);
+    myapp.controller("register",function($scope){
+        $(".submit-btn").click(function(){
+            if(!$(".input-uername").val() || !$(".input-password").val() || !$(".input-password-again").val()){
+                hintText("输入框不能为空");
+                return false;
+            }
+            if($(".input-password").val() != $(".input-password-again").val()){
+                hintText("两次输入密码不一致");
+                return false;
+            }
+            var param = {
+                username:$(".input-uername").val(),
+                password:$(".input-password").val()
+            };
+            $.ajax({
+                url:"/doctor/register",
+                dataType:"json",
+                data:JSON.stringify(param),
+                contentType:"application/json",
+                type:"POST",
+                success:function(data){
+                    if(data.status == 0){
+                        window.sessionStorage.setItem("userId",data.body._id);
+                        location.href = "main.html";
+                    }else{
+                        hintText(data.msg);
+                    }
+                }
+            });
+        });
+    });
+</script>
+<%- include('partials/footer') %>

@@ -1,0 +1,163 @@
+body {
+    padding: 20px 0;
+}
+
+.flash-message {
+    margin-top: 20px;
+}
+
+
+
+
+.form-area input {
+    height:45px;
+    line-height: 45px;
+}
+.form-area .submit-btn {
+    width: 220px;
+    height: 45px;
+    margin: 0 auto;
+    display: block;
+    margin-top:50px;
+    background: #05ceaa;
+}
+.form-area .link-for-login {
+    color: #05ceaa;
+    float: right;
+    font-size: 13px;
+}
+.lg-form-area {
+    padding:20px 40px;
+    margin-bottom:80px;
+    margin-top:0;
+    width:100%;
+    border-radius: 0 0 4px 4px;
+    min-height:400px;
+    padding-bottom:40px;
+}
+.lg-form-area h2 {
+    margin-bottom:50px;
+}
+.image-upload {
+    width:160px;
+    height:160px;
+    border:solid 1px #aaa;
+    position: relative;
+}
+.image-upload p {
+    position: absolute;
+    left:44px;
+    top:62px;
+    color:#999;
+    font-size:16px;
+}
+.image-upload input {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity: 0;
+}
+.radio-input input {
+    width:16px;
+    height:16px;
+    margin-right:15px;
+}
+.radio-input {
+    margin-top:35px;
+    margin-bottom:29px;
+}
+.radio-input span {
+    font-size: 14px;
+    color:#000;
+    font-weight: bold;
+    display: inline-block;
+    margin-right:15px;
+    margin-left:3px;
+}
+.radio-input label {
+    margin-right:50px;
+    margin-left:20px;
+}
+.container {
+    margin:0 auto;
+}
+.left-img {
+    width: 270px;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    margin-left:50px;
+    margin-top:40px;
+}
+.left-img img {
+    width:100%;
+}
+.doctor-detail {
+    margin-left:110px;
+    margin-top:40px;
+}
+.doctor-detail .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 7px;
+}
+.doctor-detail > p span:first-child {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 7px;
+    color:#999;
+}
+.doctor-title {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.introduce {
+    padding:10px 0;
+    text-align: justify;
+}
+.title-calendar {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #000;
+}
+#myCalendar {
+    margin-top:40px;
+}
+.calendar-style {
+
+}
+.calendar-style th {
+    text-align: center;
+}
+.calendar-style tbody th {
+    height:60px;
+    line-height: 60px !important;
+}
+.calendar-style td {
+    width: 85px;
+    height: 70px;
+}
+.doctor-appointment {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #000;
+}
+#myCalendar1 td {
+    max-width: 900px;
+    height: 70px;
+}
+#myCalendar {
+    max-width: 900px;
+    height:615px;
+}
+#myCalendar  .appointment-text {
+    display: block;
+    position: relative;
+    top: -15px;
+    left: 10px;
+}
