@@ -1,10 +1,8 @@
-/**
- * Created by MacBook Air on 2017/3/12.
- */
+
+
 var express = require("express");
 var mongoose = require("mongoose");
 
-mongoose.Promise = global.Promise;
 
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -12,8 +10,15 @@ var multiparty = require("multiparty");
 var fs = require("fs");
 var Doctor = require("./models/doctor");
 
+mongoose.Promise = global.Promise;
+
+
 var app = new express();
 var port = 3000;
+
+
+var php_port = process.env.PORT || 80;
+
 
 // 连接数据库
  mongoose.connect("mongodb://localhost:27017/iTongue-Doctor");
@@ -31,6 +36,7 @@ db.once("open",function(callback){
 var session = require("express-session");
 
 // 配置参数
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname,"static")));
@@ -45,6 +51,7 @@ app.listen(port);
 app.get("/",function(req,res){
     res.render("login");
 });
+
 
 app.get("/login",function(req,res){
     res.render("login");
@@ -245,6 +252,26 @@ app.post("/doctor/appointment/reset",function(req,res){
         }
     });
 });
+
+//0416 2017
+// 返回所有appointment
+app.get("/doctor/appointment/all_events",function(req,res){
+    var id = req.query.id;
+    Doctor.find({_id:id},function(err,doctor){
+        if(err){
+            console.log(err);
+        }else{
+            res.send(returnObj(0,"Success",doctor));
+        }
+    });
+});
+
+
+
+//0418 Test php connection
+
+
+
 
 // 返回对象
 function returnObj(status,msg,data){

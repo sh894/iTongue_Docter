@@ -3,13 +3,21 @@
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
         <li role="presentation"><a href="#Account" aria-controls="Account" role="tab" data-toggle="tab">Account</a></li>
         <li role="presentation" class="calendar-btn"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Calendar</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Logout</a></li>
+        <li role="presentation" ><a href="#all_events" aria-controls="events" role="tab" data-toggle="tab">Events </a></li>
+        <li role = "presentation" ><a href="#php_get" aria-controls="php_get" role="tab" data-toggle="tab">PHP Get Test</a> </li>
+        <li role = "presentation"><a href="#php_post" aria-controls="php_post" role="tab" data-toggle="tab">PHP POST TEST</a> </li>
+        <li role="presentation" ><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Logout</a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="form-area lg-form-area tab-pane active" id="home">Hello <span id="user-name"></span></div>
-        <div role="tabpanel" class="form-area lg-form-area tab-pane" id="Account">
+        <div role="tabpanel" class="form-area lg-form-area tab-pane active" id="home">
+            <h2>Hello <span id="user-name"></span></h2>
+            <h3>Today's agenda: </h3>
+
+        </div>
+
+        <div role = "tabpanel" class = "form-area lg-form-area tab-pane" id = "Account">
             <h2>Complete profile</h2>
             <div class="form-group image-upload">
                 <p>Profile picture</p>
@@ -72,10 +80,35 @@
             </div>
             <button type="button" class="btn btn-info submit-btn">Save</button>
         </div>
-        <div role="tabpanel" class="form-area lg-form-area tab-pane" id="messages">
-            <h2>Avaliable times</h2>
-            <div id="myCalendar"></div>
+
+        <div role = "tabpanel" class = "form-area lg-form-area tab-pane" id = "messages">
+            <h2>Available times</h2>
+            <div id = "myCalendar"></div>
         </div>
+
+        <div role = "tabpanel" class = "form-area lg-form-area tab-pane" id = "all_events">
+            <h2>All my events: </h2>
+            <div class="form-group">
+                <label>Events count: </label>
+                <input type="text" class="form-control input-test" placeholder="">
+            </div>
+        </div>
+
+        <div role = "tabpanel" class = "form-area lg-form-area tab-pane" id = "php_get">
+            <h2>Test PHP GET Method</h2>
+            <label>Get data: </label>
+            <input type="text" class="form-control input-php-get" placeholder="">
+            <
+        </div>
+
+        <div role = "tabpanel" class = "form-area lg-form-area tab-pane" id = "php_post">
+            <h2>Test PHP POST Method</h2>
+            <label>Post data: </label>
+            <input type="text" class="form-control input-php-post" placeholder="">
+            <button type="button" class="btn btn-info php-post-btn">POST</button>
+        </div>
+
+
         <div role="tabpanel" class="tab-pane form-area lg-form-area" id="settings">
             <button type="button" class="logout-btn btn btn-primary" ng-click="logout()">Logout</button>
         </div>

@@ -93,6 +93,7 @@ myapp.controller("doctor",function($scope){
         $(this).attr("name",true);
     });
     // 日历
+
     // 图片上传
     $(".image-upload input").change(function(){
         if($("#newWindow").length == 0){
@@ -148,12 +149,12 @@ myapp.controller("doctor",function($scope){
     $(".submit-btn").click(function(){
         var className = [".input-sex",".input-age",".input-education",".input-school",
             ".input-name",".input-tel",".input-email",".input-major",".input-msg"];
-        for(var i = 0; i < className.length; i++){
-            if(!$(className[i]).val()){
-                hintText("输入框的值不能为空");
-                return false;
-            }
-        }
+        // for(var i = 0; i < className.length; i++){
+        //     if(!$(className[i]).val()){
+        //         hintText("输入框的值不能为空");
+        //         return false;
+        //     }
+        // }
         param.sex = $(":radio:checked").val();
         param.age = $(".input-age").val();
         param.education = $(".input-education").val();
@@ -170,6 +171,7 @@ myapp.controller("doctor",function($scope){
             contentType:"application/json",
             type:"POST",
             success:function(data){
+                alert("change success");
                 if(data.status == 0){
                     $(".nav-tabs li").eq(0).addClass("active").siblings().removeClass("active");
                     $(".tab-content div").eq(0).addClass("active").siblings().removeClass("active");
@@ -179,6 +181,74 @@ myapp.controller("doctor",function($scope){
             }
         });
     });
+
+
+    //0416 2017
+    //所有appointment
+
+    $.ajax({
+        url:"/doctor/appointment/all_events?id="+userId,
+        dataType:"json",
+        type:"GET",
+
+        success:function(data){
+            if(data.status == 0){
+                $.each( data.body[0].appointment, function(index, el) {
+                    $(".input-test").val(index);
+                    //alert("element at " + index + ": " + el); // will alert each value
+                });
+
+            }
+        }
+    });
+
+    //php test POST
+
+    $(".php-post-btn").click(function(){
+       var post = $(".input-php-post").val();
+
+        // $.ajax({
+        //     //url: "http://www.handsomebird.cn:3000/doctorlist",
+        //     url: "http://localhost:80/appointment.php",
+        //     data: {"pi:": post},
+        //     type:"POST",
+        //     success:function(data){
+        //         alert("post success");
+        //     },
+        //     error: function(xhr, type, errorThrown) {
+        //         alert("xhr: " + xhr);
+        //         alert("type: " + type);
+        //         alert("error:" + errorThrown);
+        //     }
+        // });
+        $.ajax({
+            url:"http://localhost:80/appointment.php", //the page containing php script
+            data: {"pi:": post},
+            dataType: "json",
+            type: "POST", //request type
+            success:function(result){
+                alert("success");
+            },
+            error:function(x,e) {
+                if (x.status==0) {
+                    alert('You are offline!!\n Please Check Your Network.');
+                } else if(x.status==404) {
+                    alert('Requested URL not found.');
+                } else if(x.status==500) {
+                    alert('Internel Server Error.');
+                } else if(e=='parsererror') {
+                    alert('Error.\nParsing JSON Request failed.');
+                } else if(e=='timeout'){
+                    alert('Request Time out.');
+                } else {
+                    alert('Unknow Error.\n'+x.responseText);
+                }
+            }
+        });
+
+
+    });
+
 
 
     $scope.logout = function(){
